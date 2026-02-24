@@ -3,7 +3,7 @@
   "displayName": "Kengiri Icon Generator",
   "description": "VS Code app icon generator for iOS, macOS, watchOS, Android, Android TV and Web/PWA icon packs.",
   "version": "0.1.0",
-  "publisher": "kengiri",
+  "publisher": "DevTubeView",
   "author": {
     "name": "Oğuzhan ÇART",
     "url": "https://github.com/oguzhan18"
