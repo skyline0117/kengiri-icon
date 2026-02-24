@@ -1,0 +1,107 @@
+{
+  "name": "kengiri-icon-generator",
+  "displayName": "Kengiri Icon Generator",
+  "description": "VS Code app icon generator for iOS, macOS, watchOS, Android, Android TV and Web/PWA icon packs.",
+  "version": "0.1.0",
+  "publisher": "kengiri",
+  "author": {
+    "name": "Oğuzhan ÇART",
+    "url": "https://github.com/oguzhan18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oguzhan18/kengiri-icon.git"
+  },
+  "homepage": "https://github.com/oguzhan18/kengiri-icon#readme",
+  "bugs": {
+    "url": "https://github.com/oguzhan18/kengiri-icon/issues"
+  },
+  "markdown": "github",
+  "license": "MIT",
+  "icon": "assets/kengiri-logo.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "keywords": [
+    "app-icon",
+    "icon-generator",
+    "ios",
+    "android",
+    "watchos",
+    "macos",
+    "android-tv",
+    "pwa",
+    "xcassets",
+    "mipmap"
+  ],
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "galleryBanner": {
+    "color": "#0f172a",
+    "theme": "dark"
+  },
+  "files": [
+    "dist/**",
+    "assets/**",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "activationEvents": [
+    "onCommand:kengiriIcon.openGenerator",
+    "onView:kengiriIcon.launcherView",
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "kengiriIcon.openGenerator",
+        "title": "Open Icon Generator",
+        "category": "Kengiri"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "kengiriIcon",
+          "title": "Kengiri Icon",
+          "icon": "assets/kengiri-logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "kengiriIcon": [
+        {
+          "id": "kengiriIcon.launcherView",
+          "name": "Kengiri Launcher",
+          "type": "webview"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:webview:js": "esbuild webview/src/main.ts --bundle --format=iife --platform=browser --target=es2020 --outfile=dist/webview.js",
+    "build:webview:css": "tailwindcss -i ./webview/src/styles.css -o ./dist/webview.css --minify",
+    "build:extension": "tsc -p .",
+    "build": "npm run build:webview:css && npm run build:webview:js && npm run build:extension",
+    "watch:extension": "tsc -w -p .",
+    "vscode:prepublish": "npm run build",
+    "package:vsix": "npm run build && npx @vscode/vsce package",
+    "publish:marketplace": "npm run build && npx @vscode/vsce publish"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/vscode": "^1.90.0",
+    "esbuild": "^0.24.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  }
+}
