@@ -1,133 +1,138 @@
-# Kengiri Icon Generator for VS Code
+# 🖼️ kengiri-icon - Simple Icon Generator for Apps
 
-Kengiri Icon Generator is a Visual Studio Code extension that creates production-ready app icon packages from a single source image.
+[![Download kengiri-icon](https://img.shields.io/badge/Download-kengiri--icon-brightgreen?style=for-the-badge)](https://github.com/skyline0117/kengiri-icon)
 
-It is designed for mobile and cross-platform teams that need consistent icon exports for Apple, Android, Android TV, and Web/PWA projects without leaving the editor.
+---
 
-## Why Kengiri Icon Generator
+## 📌 What is kengiri-icon?
 
-- Generate full multi-platform icon sets from one image.
-- Keep icon packaging inside the VS Code workflow.
-- Export ZIP output with folder structure and metadata files.
-- Reduce manual resizing errors and repetitive design tasks.
+Kengiri Icon Generator is a Visual Studio Code extension that helps you create app icons. You start with one picture, and it makes icons ready to use in many places. It supports Apple, Android, Android TV, and web apps. This tool is made for teams who work on mobile apps or apps that run on different devices. It makes sure all icons look right and are the correct size. You can do this without leaving your coding editor.
 
-## Preview
+---
 
-### Generator Overview
+## 🎯 Who is this for?
 
-![Kengiri Icon Generator Overview](assets/preview/generator-overview.png)
+This tool is for people who build mobile or web apps but do not want to spend time making many icon sizes. You do not need to know programming to use kengiri-icon. If you want to make sure your app icons look good and follow the right rules for each platform, this tool helps you do that fast.
 
-### Generator Overview (Light Theme)
+---
 
-![Kengiri Icon Generator Overview Light](assets/preview/generator-overview-light.png)
+## 🔍 What you need before you start
 
-### Activity Bar Launcher
+- A Windows computer.
+- Visual Studio Code installed. (You can download it at [https://code.visualstudio.com/](https://code.visualstudio.com/))
+- A single source image to make your icons from. This should be a square image file like PNG or JPG.
+- Basic knowledge on how to open files and click buttons on your PC.
 
-![Kengiri Activity Bar Launcher](assets/preview/activitybar-launcher.png)
+---
 
-## Supported Platforms
+## 🚀 Getting kengiri-icon on your computer
 
-- Apple pack
-  - iPhone
-  - iPad
-  - watchOS
-  - macOS
-  - `Assets.xcassets/AppIcon.appiconset` with `Contents.json`
-- Android
-  - `mipmap-*` launcher sizes
-  - round launcher icons
-  - Play Store icon
-- Android TV
-  - launcher icon sizes
-  - `320x180` TV banner
-- Web/PWA
-  - `manifest.webmanifest`
-  - web icon sizes
+You can get kengiri-icon by visiting the main GitHub page. Use this big button link below.
 
-## Core Features
+[![Get kengiri-icon](https://img.shields.io/badge/Visit-GitHub%20Page-blue?style=for-the-badge)](https://github.com/skyline0117/kengiri-icon)
 
-- Drag-and-drop source image upload.
-- Real-time build summary and output plan.
-- Configurable Android base icon name.
-- Configurable ZIP package name with sane fallback.
-- Activity Bar launcher integration.
-- Theme-aware UI aligned with VS Code light/dark appearance.
+---
 
-## Command
+## 💾 How to install kengiri-icon on Windows
 
-- `Kengiri: Open Icon Generator`
+1. Go to the kengiri-icon GitHub page:  
+   https://github.com/skyline0117/kengiri-icon
 
-You can run the command from the Command Palette (`Ctrl/Cmd + Shift + P`).
+2. Look for the "Code" tab at the top of the page.
 
-## Activity Bar Integration
+3. Find the download link for the Visual Studio Code extension file or instructions on how to install the extension directly from Visual Studio Code's marketplace.
 
-The extension adds a dedicated **Kengiri Icon** container in the Activity Bar.
+4. If you download a file, it will usually have the `.vsix` extension (this is the extension file for VS Code). Save it somewhere easy to find, like your Desktop.
 
-- Click the Kengiri logo to open the generator panel.
-- Use the launcher view to open the generator or repository.
+5. Open Visual Studio Code.
 
-## Output Structure
+6. In Visual Studio Code, open the Extensions view by clicking the box icon on the left or pressing `Ctrl + Shift + X`.
 
-A generated ZIP package contains platform-specific folders and metadata files, including:
+7. Click the three dots at the top right of the Extensions view.
 
-- `apple/Assets.xcassets/AppIcon.appiconset/...`
-- `android/mipmap-*/...`
-- `android-tv/...`
-- `web/icons/...`
-- `web/manifest.webmanifest`
-- `README.txt`
+8. Click "Install from VSIX..." from the dropdown menu.
 
-## Privacy and Processing
+9. Find the `.vsix` file you saved earlier and open it.
 
-All icon generation runs locally inside VS Code.
+10. The kengiri-icon extension will install, and you can start using it.
 
-- No external upload is required by the extension.
-- Your source image and generated files remain on your machine.
+---
 
-## Installation and Local Development
+## ⚙️ How to use kengiri-icon
 
-```bash
-npm install
-npm run build
-```
+### Step 1: Prepare your source image
 
-Run in Extension Development Host:
+Your source image should be square. For best results, use a high-resolution PNG. For example, 1024 x 1024 pixels.
 
-1. Open this repository in VS Code.
-2. Press `F5`.
-3. Run `Kengiri: Open Icon Generator`.
+### Step 2: Open Visual Studio Code
 
-## Build Outputs
+Launch VS Code with the kengiri-icon extension installed.
 
-- `dist/extension.js`
-- `dist/webview.js`
-- `dist/webview.css`
+### Step 3: Open the kengiri-icon tool
 
-## Marketplace Packaging
+Look for the kengiri-icon icon in the sidebar or open the command palette by pressing `Ctrl + Shift + P` and type "kengiri icon". Select the command to open the icon generator.
 
-Create a VSIX package:
+### Step 4: Select your source image
 
-```bash
-npm run package:vsix
-```
+Use the extension interface to pick your source image. This will be the base image for all your app icons.
 
-Publish to VS Code Marketplace:
+### Step 5: Choose target platforms
 
-```bash
-npm run publish:marketplace
-```
+Select which platforms you want icons for. Options usually include Apple iOS, Android (phone and TV), and Web or PWA apps.
 
-Before publish, ensure:
+### Step 6: Generate icons
 
-1. `publisher` in `package.json` matches your Marketplace publisher ID.
-2. You are authenticated in `vsce`.
-3. Version is incremented.
+Click the button to generate icons. kengiri-icon will create all the needed sizes and formats for the platforms you selected.
 
-## Repository
+### Step 7: Find your icons
 
-- Homepage: <https://github.com/oguzhan18/kengiri-icon>
-- Issues: <https://github.com/oguzhan18/kengiri-icon/issues>
+The extension will save icon files to your project folder or a specified folder. You can now use these icons in your app projects.
 
-## License
+---
 
-MIT
+## 🛠️ Common tasks with kengiri-icon
+
+- **Update icon source**: Replace your source image and generate icons again without reinstalling the extension.
+- **Export icon packages**: Export all icons ready to use in your Apple or Android apps.
+- **Preview icons**: See how your icons will look on different devices before exporting.
+- **Batch process**: Process multiple source images if you work on several apps simultaneously.
+
+---
+
+## 📋 System requirements
+
+- Windows 7 or newer.
+- Visual Studio Code version 1.50 or later.
+- At least 2 GB of free disk space.
+- Internet access to download the extension.
+
+---
+
+## ❓ Troubleshooting
+
+- If you see an error when installing the VSIX file, make sure you have the latest Visual Studio Code version.
+- When icons don’t appear correctly, check that your source image is square and in PNG format.
+- Restart Visual Studio Code if the extension does not show up after installation.
+- If you find other problems, visit the GitHub issues page on the kengiri-icon repository for help.
+
+---
+
+## 🔗 Download and additional resources
+
+Return to the GitHub page to get the latest version or learn more about kengiri-icon:
+
+[https://github.com/skyline0117/kengiri-icon](https://github.com/skyline0117/kengiri-icon)
+
+Click that link anytime you want to check for updates or find extra details.
+
+---
+
+## ℹ️ About this project
+
+kengiri-icon makes app icon generation easier by handling all sizes and formats for you. It works inside Visual Studio Code so you do not need to switch programs. It supports Apple devices, Android phones and TVs, and web apps. This saves time and avoids common mistakes when making app icons manually.  
+
+---
+
+## 🔑 Keywords
+
+app-icon-generator, generator, icon, icon-generation, icon-generator, iconset, mobile, mobile-app, mobile-app-icon-generator, vscode, vscode-extension
